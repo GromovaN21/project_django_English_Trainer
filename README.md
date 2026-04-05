@@ -26,7 +26,7 @@
 
 \## 📦 Установка
 
-1\. Клонируйте репозиторий: `git clone https://github.com`
+1\. Клонируйте репозиторий: `git clone https://github.com/GromovaN21/project_django_English_Trainer.git`
 
 2\. Создайте venv: `python -m venv venv`
 
