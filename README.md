@@ -32,7 +32,9 @@
 
 3\. Активируйте venv: `venv\Scripts\activate`
 
-4\. Запустите сервер: `python manage.py runserver`
+4\. Установите django: `pip install django`
+
+5\. Запустите сервер: `python manage.py runserver`
 
 
 
