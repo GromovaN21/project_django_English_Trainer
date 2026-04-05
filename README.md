@@ -30,7 +30,7 @@
 
 2\. Создайте venv: `python -m venv venv`
 
-3\. Активируйте venv: `venv\\Scripts\\activate`
+3\. Активируйте venv: `venv\Scripts\activate`
 
 4\. Запустите сервер: `python manage.py runserver`
 
