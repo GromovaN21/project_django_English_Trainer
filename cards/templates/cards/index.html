@@ -169,6 +169,14 @@
     transform: rotateY(180deg);
 }
 
+#test-section {
+    text-align: center;
+}
+
+#question-word {
+    margin-bottom: 20px;
+    width: 100%;
+}
 /* Располагаем кнопки в ряд под карточкой */
 .card-controls {
     display: flex;
@@ -187,7 +195,7 @@
     font-size: 18px; /* Размер текста слова */
 }
 
-/* Чистый красный крестик */
+/* крестик */
 .delete-btn {
     background: none !important; /* Убираем фон полностью */
     border: none !important;     /* Убираем рамки полностью */
@@ -216,13 +224,25 @@
 
         <!-- Навигация (Меню) -->
         <div class="menu">
+            <button onclick="showSection('description-section')">ОПИСАНИЕ</button>
             <button onclick="showSection('add-section')">Словарь</button>
             <button onclick="showSection('test-section'); startTest();">ПРОЙТИ ТЕСТ</button>
             <button onclick="showSection('card-section'); startFlashcards();">КАРТОЧКА</button>
         </div>
 
+    <!-- 1. Секция ОПИСАНИЕ  -->
+        <div id="description-section" class="section" style="display: none;">
+            <h2>О проекте English Trainer</h2>
+            <div class="description-card">
+                <p><strong>📖 Создавайте свой словарь:</strong> Перейдите во вкладку «Словарь», чтобы добавить новые слова и их переводы.</p>
+                <p><strong>🧠 Проверяйте знания:</strong> В режиме «Пройти тест» система создаст экзамен на основе ваших слов.</p>
+                <p><strong>🃏 Тренируйте память:</strong> В разделе «Карточка» изучайте слова, вспоминая перевод.</p>
+            </div>
+        </div>
+
+
         <!-- Секция добавления слов -->
-        <div id="add-section" class="section">
+        <div id="add-section" class="section" style="display: none;">
             <h3>Ваш словарь</h3>
             <div class="input-group">
                 <input type="text" id="word-en" placeholder="Слово (English)">
@@ -232,27 +252,17 @@
             <ul id="word-list"></ul>
         </div>
 
-        <!-- Секция теста  -->
-        <div id="test-section" style="display:none;">
-            <h2 id="question-word">?</h2>
-             <div id="options-container"></div>
-        </div>
-
-
-
-
-
 
     <!-- Выбор в тесте -->
 
 
-        <div id="test-section" style="display:none; text-align: center; margin-top: 30px;">
+        <div id="test-section" style="display: none;">
                 <h2 id="question-word" style="font-size: 2.5em; color: #2c3e50;">?</h2>
                 <div id="options-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; max-width: 400px; margin: 20px auto;">
                 <!-- Сюда JavaScript будет вставлять кнопки вариантов -->
                 </div>
                 <button onclick="backToDictionary()" style="margin-top: 20px; background: none; border: none; color: #3498db; cursor: pointer; text-decoration: underline;">Вернуться к словарю</button>
-            </div>
+        </div>
 
 
         <div id="card-section" style="display:none; text-align: center;">
@@ -271,6 +281,7 @@
             </div>
         </div>
 
+    </div>
 
 
 <script>
@@ -303,22 +314,6 @@
     }
 
 
-    // Функция переключения вкладок
-    function showSection(sectionId) {
-        // Скрываем все секции
-        document.getElementById('add-section').style.display = 'none';
-        document.getElementById('test-section').style.display = 'none';
-        document.getElementById('card-section').style.display = 'none';
-
-        // Показываем нужную
-        const target = document.getElementById(sectionId);
-        if (target) {
-            target.style.display = 'block';
-        } else {
-            console.error("Секция с ID " + sectionId + " не найдена!");
-        }
-    }
-
     // Функция добавления слов
 
     function addWord() {
@@ -347,6 +342,7 @@
     }
 
        function showSection(sectionId) {
+            document.getElementById('description-section').style.display = 'none'; // Скрываем описание
             document.getElementById('add-section').style.display = 'none';
             document.getElementById('test-section').style.display = 'none';
             document.getElementById('card-section').style.display = 'none';
