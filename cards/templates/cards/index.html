@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <title>My English App</title>
@@ -18,22 +19,23 @@
         /* Стили для заголовка */
         .main-title {
             text-align: center;
-            font-size: 4em; /* Очень большой размер */
+            font-size: 4em;
+            /* Очень большой размер */
             color: #2c3e50;
             text-transform: uppercase;
             letter-spacing: 4px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+
             /* Градиентный текст */
             background: linear-gradient(45deg, #2c3e50, #3498db);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            
+
             /* Небольшая анимация появления */
             animation: fadeIn 2s ease-in-out;
         }
 
-              .menu button {
+        .menu button {
             padding: 12px 25px;
             font-size: 1.1em;
             font-weight: bold;
@@ -44,180 +46,234 @@
             color: white;
 
             border: none;
-            border-radius: 30px; /* Скругленные края */
+            border-radius: 30px;
+            /* Скругленные края */
             margin: 5px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: all 0.3s ease; /* Плавность эффектов */
+            transition: all 0.3s ease;
+            /* Плавность эффектов */
             box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
         }
 
         /* Эффект при наведении */
         .menu button:hover {
-            transform: translateY(-3px); /* Кнопка слегка подпрыгивает */
+            transform: translateY(-3px);
+            /* Кнопка слегка подпрыгивает */
             box-shadow: 0 6px 20px rgba(52, 152, 219, 0.5);
-            filter: brightness(1.1); /* Становится чуть ярче */
+            filter: brightness(1.1);
+            /* Становится чуть ярче */
         }
 
         /* Эффект при нажатии */
         .menu button:active {
             transform: translateY(-1px);
         }
+
+        #add-section input {
+            padding: 10px 20px;
+            font-size: 0.9em;
+            border-radius: 8px;
+            border: 1px solid #bbbdbe;
+        }
+
         #add-section button {
-    padding: 10px 20px;
-    font-size: 0.9em;
-    font-weight: 600;
-    cursor: pointer;
+            padding: 10px 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            cursor: pointer;
 
-    /* Спокойный серый или темно-синий без яркого градиента */
-    background-color: #f8f9fa;
-    color: #2c3e50;
+            /* Спокойный серый или темно-синий без яркого градиента */
+            background-color: #f8f9fa;
+            color: #2c3e50;
 
-    border: 2px solid #3498db; /* Тонкая рамка в цвет темы */
-    border-radius: 8px;
-    transition: all 0.2s ease;
-}
+            border: 2px solid #3498db;
+            /* Тонкая рамка в цвет темы */
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
 
-/* Эффект при наведении — кнопка заливается цветом */
-#add-section button:hover {
-    background-color: #3498db;
-    color: white;
-}
-    .option-btn {
-    padding: 15px;
-    background-color: #f8f9fa;
-    border: 2px solid #3498db;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 1.1em;
-    transition: 0.2s;
-}
-    .option-btn:hover {
-         background-color: #3498db;
-         color: white;
-}
-    .option-btn.correct {
-        background-color: #2ecc71 !important; /* Зеленый */
-        color: white !important;
-        border-color: #27ae60 !important;
-}
+        /* Эффект при наведении — кнопка заливается цветом */
+        #add-section button:hover {
+            background-color: #3498db;
+            color: white;
+        }
 
-    .option-btn.wrong {
-        background-color: #e74c3c !important; /* Красный */
-        color: white !important;
-        border-color: #c0392b !important;
-}
-    .options-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        #word-list>li:hover>.delete-btn {
+            opacity: 1;
+        }
 
-        gap: 20px;
+        .option-btn {
+            padding: 15px;
+            background-color: #f8f9fa;
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: 0.2s;
+        }
 
-        justify-content: center;
-        margin-top: 20px;
-}
-    .option-btn {
-        margin: 5px; 
-}
-    .options-container {
-        display: grid; /* Обязательно! */
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 15px; /* Вот этот отступ между кнопками */
-        margin-top: 20px;
-}
-.flashcard-container {
-    perspective: 1000px; /* Эффект глубины для 3D */
-    width: 300px;
-    height: 180px;
-    margin: 20px auto; /* Центрируем под меню */
-}
+        .option-btn:hover {
+            background-color: #3498db;
+            color: white;
+        }
 
-#flashcard {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    cursor: pointer;
-}
+        .option-btn.correct {
+            background-color: #2ecc71 !important;
+            /* Зеленый */
+            color: white !important;
+            border-color: #27ae60 !important;
+        }
 
-/* 2. Прячем одну сторону за другую */
-.card-face {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden; /* Ключевое свойство: скрывает изнанку */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    border-radius: 15px;
-    border: 2px solid #3498db;
-    background: white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
+        .option-btn.wrong {
+            background-color: #e74c3c !important;
+            /* Красный */
+            color: white !important;
+            border-color: #c0392b !important;
+        }
 
-/* 3. Разворачиваем английскую сторону в пространстве */
-.card-back {
-    transform: rotateY(180deg);
-    background-color: #f8f9fa;
-    color: #3498db;
-}
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 
-/* 4. Класс, который добавляет скрипт при нажатии "Перевернуть" */
-#flashcard.is-flipped {
-    transform: rotateY(180deg);
-}
+            gap: 20px;
 
-#test-section {
-    text-align: center;
-}
+            justify-content: center;
+            margin-top: 20px;
+        }
 
-#question-word {
-    margin-bottom: 20px;
-    width: 100%;
-}
-/* Располагаем кнопки в ряд под карточкой */
-.card-controls {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
+        .option-btn {
+            margin: 5px;
+        }
 
-#word-list {
-    padding-left: 20px;
-}
+        .options-container {
+            display: grid;
+            /* Обязательно! */
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 15px;
+            /* Вот этот отступ между кнопками */
+            margin-top: 20px;
+        }
 
-.word-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    font-size: 18px; /* Размер текста слова */
-}
+        .flashcard-container {
+            perspective: 1000px;
+            /* Эффект глубины для 3D */
+            width: 300px;
+            height: 180px;
+            margin: 20px auto;
+            /* Центрируем под меню */
+        }
 
-/* крестик */
-.delete-btn {
-    background: none !important; /* Убираем фон полностью */
-    border: none !important;     /* Убираем рамки полностью */
-    outline: none;               /* Убираем контур при клике */
-    color: #ff4d4d;              /* Яркий красный */
-    font-size: 26px;             /* Сделали крупнее */
-    font-weight: bold;           /* Жирный для четкости */
-    cursor: pointer;
-    margin-left: 12px;
-    padding: 0;
-    line-height: 0.8;            /* Центрируем по вертикали */
-    transition: color 0.2s, transform 0.2s;
-}
+        #flashcard {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
 
-/* Эффект при наведении — становится темнее и чуть больше */
-.delete-btn:hover {
-    color: #b30000;
-    transform: scale(1.25);
-}
-        
+        /* 2. Прячем одну сторону за другую */
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            /* Ключевое свойство: скрывает изнанку */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            border-radius: 15px;
+            border: 2px solid #3498db;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 3. Разворачиваем английскую сторону в пространстве */
+        .card-back {
+            transform: rotateY(180deg);
+            background-color: #f8f9fa;
+            color: #3498db;
+        }
+
+        /* 4. Класс, который добавляет скрипт при нажатии "Перевернуть" */
+        #flashcard.is-flipped {
+            transform: rotateY(180deg);
+        }
+
+        #test-section {
+            text-align: center;
+        }
+
+        #question-word {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        /* Располагаем кнопки в ряд под карточкой */
+        .card-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        #word-list {
+            padding-left: 10px;
+            max-height: 30vh;
+            overflow: auto;
+            background: white;
+        }
+
+        #word-list>li {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #word-list>li>span {
+            flex-grow: 1;
+        }
+
+        .word-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 18px;
+            /* Размер текста слова */
+        }
+
+        /* крестик */
+        .delete-btn {
+            background: none !important;
+            /* Убираем фон полностью */
+            border: none !important;
+            /* Убираем рамки полностью */
+            outline: none;
+            /* Убираем контур при клике */
+            color: #ff4d4d;
+            /* Яркий красный */
+            font-size: 26px;
+            /* Сделали крупнее */
+            font-weight: bold;
+            /* Жирный для четкости */
+            cursor: pointer;
+            margin-left: 12px;
+            padding: 0;
+            line-height: 0.8;
+            /* Центрируем по вертикали */
+            opacity: 0;
+            transition: opacity 100ms;
+            float: right;
+            clear: both;
+        }
+
+        /* Эффект при наведении — становится темнее и чуть больше */
+        #add-section .delete-btn:hover {
+            color: #b30000;
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1 class="main-title">English Trainer</h1>
@@ -225,17 +281,19 @@
         <!-- Навигация (Меню) -->
         <div class="menu">
             <button onclick="showSection('description-section')">ОПИСАНИЕ</button>
-            <button onclick="showSection('add-section')">Словарь</button>
+            <button onclick="showSection('add-section', renderDictionary)">Словарь</button>
             <button onclick="showSection('test-section'); startTest();">ПРОЙТИ ТЕСТ</button>
             <button onclick="showSection('card-section'); startFlashcards();">КАРТОЧКА</button>
         </div>
 
-    <!-- 1. Секция ОПИСАНИЕ  -->
+        <!-- 1. Секция ОПИСАНИЕ  -->
         <div id="description-section" class="section" style="display: none;">
             <h2>О проекте English Trainer</h2>
             <div class="description-card">
-                <p><strong>📖 Создавайте свой словарь:</strong> Перейдите во вкладку «Словарь», чтобы добавить новые слова и их переводы.</p>
-                <p><strong>🧠 Проверяйте знания:</strong> В режиме «Пройти тест» система создаст экзамен на основе ваших слов.</p>
+                <p><strong>📖 Создавайте свой словарь:</strong> Перейдите во вкладку «Словарь», чтобы добавить новые
+                    слова и их переводы.</p>
+                <p><strong>🧠 Проверяйте знания:</strong> В режиме «Пройти тест» система создаст экзамен на основе ваших
+                    слов.</p>
                 <p><strong>🃏 Тренируйте память:</strong> В разделе «Карточка» изучайте слова, вспоминая перевод.</p>
             </div>
         </div>
@@ -244,24 +302,28 @@
         <!-- Секция добавления слов -->
         <div id="add-section" class="section" style="display: none;">
             <h3>Ваш словарь</h3>
-            <div class="input-group">
-                <input type="text" id="word-en" placeholder="Слово (English)">
-                <input type="text" id="word-ru" placeholder="Перевод (Russian)">
-                <button onclick="addWord()">Добавить</button>
-            </div>
+            <form id="add-form" style="display: inline-block;">
+                {% csrf_token %}
+                <input name="word-en" type="text" id="word-en" placeholder="Слово (English)" required>
+                <input name="word-ru" type="text" id="word-ru" placeholder="Перевод (Russian)" required>
+            </form>
+            <button onclick="addWord()">Добавить</button>
             <ul id="word-list"></ul>
         </div>
 
 
-    <!-- Выбор в тесте -->
+        <!-- Выбор в тесте -->
 
 
         <div id="test-section" style="display: none;">
-                <h2 id="question-word" style="font-size: 2.5em; color: #2c3e50;">?</h2>
-                <div id="options-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; max-width: 400px; margin: 20px auto;">
+            <h2 id="question-word" style="font-size: 2.5em; color: #2c3e50;">?</h2>
+            <div id="options-container"
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; max-width: 400px; margin: 20px auto;">
                 <!-- Сюда JavaScript будет вставлять кнопки вариантов -->
-                </div>
-                <button onclick="backToDictionary()" style="margin-top: 20px; background: none; border: none; color: #3498db; cursor: pointer; text-decoration: underline;">Вернуться к словарю</button>
+            </div>
+            <button onclick="backToDictionary()"
+                style="margin-top: 20px; background: none; border: none; color: #3498db; cursor: pointer; text-decoration: underline;">Вернуться
+                к словарю</button>
         </div>
 
 
@@ -284,64 +346,74 @@
     </div>
 
 
-<script>
-    // 1. Инициализируем массив (сразу добавим 4 слова для проверки)
-    let dictionary = [
-        {en: 'cat', ru: 'кошка'},
-        {en: 'dog', ru: 'собака'},
-        {en: 'fish', ru: 'рыба'},
-        {en: 'bird', ru: 'птица'},
-        {en: 'mouse', ru: 'мышь'}
-    ];
-    let currentCard = null; // Здесь будем хранить текущее выбранное слово
-    let isFlipped = false;  // Состояние: перевернута карта или нет
-    
-    function renderDictionary() {
-        const list = document.getElementById('word-list');
-        if (!list) return;
+    <script>
+        // 1. Инициализируем массив (сразу добавим 4 слова для проверки)
+        let dictionary = [];
+        let currentCard = null; // Здесь будем хранить текущее выбранное слово
+        let isFlipped = false;  // Состояние: перевернута карта или нет
 
-        list.innerHTML = ''; // Очищаем список перед отрисовкой
+        const csrftoken = document.cookie.split('; ').find(c => c.startsWith('csrftoken='))?.split('=')[1];
+        const addForm = document.getElementById("add-form");
 
-        dictionary.forEach((item, index) => {
-            const li = document.createElement('li');
-            li.style.marginBottom = "10px"; // Немного отступа
-            li.innerHTML = `
-                <span><b>${item.en}</b> — ${item.ru}</span>
-                <button class="delete-btn" onclick="deleteWord(${index})" title="Удалить">&times;</button>
-            `;
-            list.appendChild(li);
-        });
-    }
+        // Перезагрузка списка
+        async function renderDictionary() {
+            const list = document.getElementById('word-list');
+            if (!list) return;
 
+            list.innerHTML = ''; // Очищаем список перед отрисовкой
+            dictionary = [];
 
-    // Функция добавления слов
-
-    function addWord() {
-        const enInput = document.getElementById('word-en');
-        const ruInput = document.getElementById('word-ru');
-        const en = enInput.value.trim();
-        const ru = ruInput.value.trim();
-
-        if (en && ru) {
-            dictionary.push({ en, ru });
-
-            // Вызываем перерисовку, чтобы новая кнопка появилась
-            renderDictionary();
-
-            enInput.value = "";
-            ruInput.value = "";
-        } else {
-            alert("Заполните оба поля!");
+            const res = await fetch('/records/', { headers: { 'Accept': 'application/json' } });
+            if (!res.ok) return console.error('load failed', res.status);
+            const { records } = await res.json();
+            records.forEach(rec => {
+                dictionary.push(rec)
+                const li = document.createElement('li');
+                li.style.margin = "8px"; // Немного отступа
+                li.innerHTML = `<span><b>${rec.en}</b> — ${rec.ru}</span>
+                <button class="delete-btn" onclick="deleteWord(${dictionary.length - 1}, ${rec.id})" title="Удалить">&times;</button>`;
+                list.appendChild(li);
+            })
         }
-    }
-      function deleteWord(index) {
-        // Удаляем из массива
-        dictionary.splice(index, 1);
-        // Обновляем список на экране
-        renderDictionary();
-    }
 
-       function showSection(sectionId) {
+        // Функция добавления слов
+        async function addWord() {
+            //e.preventDefault();
+            const r = await fetch('/add-record', {
+                method: 'POST', body: new FormData(addForm),
+                headers: { 'X-CSRFToken': csrftoken || '' }
+            });
+            if (r.ok) onDictionaryWordAdded((r.headers.get('content-type') || '').includes('application/json') ? await r.json() : await r.text());
+            else alert('Ошибка добавления');
+        }
+
+        async function onDictionaryWordAdded(h) {
+            console.log('ok', h);
+            renderDictionary();
+        }
+
+        // Функция удаления слов
+        async function deleteWord(index, id) {
+            if (!index || !id) return;
+            if (!confirm('Удалить запись?')) return;
+            const res = await fetch(`/records/${id}/delete/`, {
+                method: 'POST',
+                headers: { 'X-CSRFToken': csrftoken, 'Accept': 'application/json' },
+                body: null
+            });
+            if (res.ok) {
+                // Удаляем из массива
+                dictionary.splice(index, 1);
+                // Обновляем список на экране
+                renderDictionary();
+            } else {
+                const text = await res.text().catch(() => null);
+                console.error('Delete failed', res.status, text);
+                alert('Ошибка удаления');
+            }
+        }
+
+        function showSection(sectionId, callback) {
             document.getElementById('description-section').style.display = 'none'; // Скрываем описание
             document.getElementById('add-section').style.display = 'none';
             document.getElementById('test-section').style.display = 'none';
@@ -351,116 +423,119 @@
             if (target) {
                 target.style.display = 'block';
             }
+
+            if (callback) callback();
         }
 
- 
-    // ГЛАВНАЯ ФУНКЦИЯ ТЕСТА
-    function startTest() {
-        console.log("Кнопка нажата, слов в словаре:", dictionary.length);
 
-        if (dictionary.length < 5) {
-            alert("Нужно минимум 5 слова! У вас пока: " + dictionary.length);
-            showSection('add-section');
-            return;
-        }
+        // ГЛАВНАЯ ФУНКЦИЯ ТЕСТА
+        function startTest() {
+            console.log("Кнопка нажата, слов в словаре:", dictionary.length);
 
-        generateQuestion();
-    }
-
-    function generateQuestion() {
-    const container = document.getElementById('options-container');
-    container.innerHTML = ''; // Очищаем старые кнопки
-
-    // 1. Выбираем правильное слово
-    const correctWord = dictionary[Math.floor(Math.random() * dictionary.length)];
-    document.getElementById('question-word').innerText = correctWord.en;
-
-    // 2. Собираем 5 вариантов (1 верный + 4 случайных)
-    let options = [correctWord.ru];
-    while (options.length < 4) { // Теперь 5 вариантов
-        let randomRu = dictionary[Math.floor(Math.random() * dictionary.length)].ru;
-        if (!options.includes(randomRu)) {
-            options.push(randomRu);
-        }
-    }
-
-    // 3. Перемешиваем
-    options.sort(() => Math.random() - 0.5);
-
-    // 4. Создаем кнопки
-    options.forEach(text => {
-        const btn = document.createElement('button');
-        btn.innerText = text;
-        btn.className = 'option-btn';
-
-        btn.onclick = function() {
-            // Блокируем нажатия на другие кнопки во время проверки
-            const allButtons = container.querySelectorAll('.option-btn');
-            allButtons.forEach(b => b.style.pointerEvents = 'none');
-
-            if (text === correctWord.ru) {
-                // Если угадали — кнопка станет зеленой
-                btn.classList.add('correct');
-                setTimeout(generateQuestion, 1000); // Через секунду новый вопрос
-            } else {
-                // Если ошиблись — эта красная, а правильная — зеленая
-                btn.classList.add('wrong');
-
-                // Ищем и подсвечиваем правильную кнопку
-                allButtons.forEach(b => {
-                    if (b.innerText === correctWord.ru) {
-                        b.classList.add('correct');
-                    }
-                });
-
-                // Даем 2 секунды посмотреть на ошибку и идем дальше
-                setTimeout(generateQuestion, 2000);
+            if (dictionary.length < 5) {
+                alert("Нужно минимум 5 слова! У вас пока: " + dictionary.length);
+                showSection('add-section');
+                return;
             }
-        };
-        container.appendChild(btn);
-    });
-}
 
-
-let currentCardIndex = -1; // Начинаем с -1, чтобы первая карточка была под индексом 0
-
-// Функция переворота
-function flipCard() {
-    const card = document.getElementById('flashcard');
-    card.classList.toggle('is-flipped');
-}
-
-// Функция переключения на следующее слово
-function nextCard() {
-    const card = document.getElementById('flashcard');
-
-    // Сначала всегда возвращаем карточку в исходное (русское) положение
-    card.classList.remove('is-flipped');
-
-    // Небольшая задержка, чтобы смена текста произошла, когда карточка отвернута
-    setTimeout(() => {
-        if (dictionary.length === 0) {
-            document.getElementById('card-ru').innerText = "Словарь пуст";
-            return;
+            generateQuestion();
         }
 
-        // Переходим к следующему индексу
-        currentCardIndex = (currentCardIndex + 1) % dictionary.length;
-        const currentWord = dictionary[currentCardIndex];
+        function generateQuestion() {
+            const container = document.getElementById('options-container');
+            container.innerHTML = ''; // Очищаем старые кнопки
 
-        // Обновляем текст на обеих сторонах
-        document.getElementById('card-ru').innerText = currentWord.ru;
-        document.getElementById('card-en').innerText = currentWord.en;
-    }, 150);
-}
+            // 1. Выбираем правильное слово
+            const correctWord = dictionary[Math.floor(Math.random() * dictionary.length)];
+            document.getElementById('question-word').innerText = correctWord.en;
 
-// Функция для запуска раздела (вызывать из вашего меню)
-function startFlashcards() {
-    currentCardIndex = -1; // Сброс при каждом открытии вкладки
-    nextCard();
-}
+            // 2. Собираем 5 вариантов (1 верный + 4 случайных)
+            let options = [correctWord.ru];
+            while (options.length < 4) { // Теперь 5 вариантов
+                let randomRu = dictionary[Math.floor(Math.random() * dictionary.length)].ru;
+                if (!options.includes(randomRu)) {
+                    options.push(randomRu);
+                }
+            }
+
+            // 3. Перемешиваем
+            options.sort(() => Math.random() - 0.5);
+
+            // 4. Создаем кнопки
+            options.forEach(text => {
+                const btn = document.createElement('button');
+                btn.innerText = text;
+                btn.className = 'option-btn';
+
+                btn.onclick = function () {
+                    // Блокируем нажатия на другие кнопки во время проверки
+                    const allButtons = container.querySelectorAll('.option-btn');
+                    allButtons.forEach(b => b.style.pointerEvents = 'none');
+
+                    if (text === correctWord.ru) {
+                        // Если угадали — кнопка станет зеленой
+                        btn.classList.add('correct');
+                        setTimeout(generateQuestion, 1000); // Через секунду новый вопрос
+                    } else {
+                        // Если ошиблись — эта красная, а правильная — зеленая
+                        btn.classList.add('wrong');
+
+                        // Ищем и подсвечиваем правильную кнопку
+                        allButtons.forEach(b => {
+                            if (b.innerText === correctWord.ru) {
+                                b.classList.add('correct');
+                            }
+                        });
+
+                        // Даем 2 секунды посмотреть на ошибку и идем дальше
+                        setTimeout(generateQuestion, 2000);
+                    }
+                };
+                container.appendChild(btn);
+            });
+        }
 
 
-</script>
+        let currentCardIndex = -1; // Начинаем с -1, чтобы первая карточка была под индексом 0
+
+        // Функция переворота
+        function flipCard() {
+            const card = document.getElementById('flashcard');
+            card.classList.toggle('is-flipped');
+        }
+
+        // Функция переключения на следующее слово
+        function nextCard() {
+            const card = document.getElementById('flashcard');
+
+            // Сначала всегда возвращаем карточку в исходное (русское) положение
+            card.classList.remove('is-flipped');
+
+            // Небольшая задержка, чтобы смена текста произошла, когда карточка отвернута
+            setTimeout(() => {
+                if (dictionary.length === 0) {
+                    document.getElementById('card-ru').innerText = "Словарь пуст";
+                    return;
+                }
+
+                // Переходим к следующему индексу
+                currentCardIndex = (currentCardIndex + 1) % dictionary.length;
+                const currentWord = dictionary[currentCardIndex];
+
+                // Обновляем текст на обеих сторонах
+                document.getElementById('card-ru').innerText = currentWord.ru;
+                document.getElementById('card-en').innerText = currentWord.en;
+            }, 150);
+        }
+
+        // Функция для запуска раздела (вызывать из вашего меню)
+        function startFlashcards() {
+            currentCardIndex = -1; // Сброс при каждом открытии вкладки
+            nextCard();
+        }
+
+
+    </script>
 </body> <!-- Это самый последний тег в файле -->
+
 </html>
