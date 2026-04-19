@@ -47,10 +47,10 @@
 git clone https://github.com/GromovaN21/project_django_English_Trainer.git
 ```
 
-
 2. Перейдите в директорию: 
 ```
 cd ./project_django_English_Trainer/
+```
 
 
 3. Соберите образ:
