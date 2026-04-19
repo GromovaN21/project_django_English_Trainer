@@ -47,15 +47,24 @@
 git clone https://github.com/GromovaN21/project_django_English_Trainer.git
 ```
 
-2. Соберите образ:
+
+2. Перейдите в директорию: 
+```
+cd ./project_django_English_Trainer/
+
+
+3. Соберите образ:
 ```
 docker build --no-cache -t english-trainer .
 ```
 
-3. Запустите образ:
+4. Запустите образ:
 ```
 docker run --name english-trainer -d -p 80:8000 -e APP_PORT=8000 -e APP_DEBUG=False -v ./data:/app/data english-trainer
 ```
+5. Зайти на страницу:
+http://127.0.0.1:8000/
+
 #### Переменные окружения
 * APP_PORT - порт, на котором запускается сервер внутри контейнера. Значение должно соответствовать внутреннему порту аргумента -p команды `docker run`, например, `... -p 80:15672 -e APP_PORT=15672 ...`.
 * APP_DEBUG - режим отладки. Включается при значении `... -e APP_DEBUG=True ...` с соблюдением регистра.
